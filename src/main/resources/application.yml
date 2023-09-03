@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: productmaneger
+  datasource:
+    url: jdbc:h2:mem:productmaneger_db;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1
+    username: admin
+    password:
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  sql:
+    init:
+      #mode: always
+      data-locations: classpath:db/data.sql
+  h2:
+    console:
+      path: "/h2"
+      enable: true
